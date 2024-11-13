@@ -1,24 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>base Page</title>
-    </head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Modern Web Application</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General reset and font style */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            color: #34495E;
+        }
+
+        /* Header and Navigation */
+        header {
+            background-color: #34495E;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+        }
+
+        nav .logo a {
+            color: #fff;
+            font-size: 2em;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        nav .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        nav .nav-links li {
+            margin-right: 30px;
+        }
+
+        nav .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+
+        nav .nav-links a:hover {
+            color: #FF6F61;
+        }
+
+        nav .cta .cta-btn {
+            background-color: #FF6F61;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        nav .cta .cta-btn:hover {
+            background-color: #e5533d;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #FF6F61, #4ECDC4);
+            color: #fff;
+            height: 70vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero .hero-content h1 {
+            font-size: 4.5em;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .hero .hero-content p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .hero .btn-main {
+            background-color: #4ECDC4;
+            color: #fff;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.3em;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+
+        .hero .btn-main:hover {
+            transform: scale(1.1);
+            background-color: #2aa991;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 60px 20px;
+            background-color: #fff;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .features h2 {
+            font-size: 2.8em;
+            margin-bottom: 40px;
+            font-weight: 600;
+            color: #34495E;
+        }
+
+        .features .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .features .feature-item {
+            background-color: #FFFBF1;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .features .feature-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .features .feature-item h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: #34495E;
+        }
+
+        .features .feature-item p {
+            font-size: 1.1em;
+            color: #666;
+        }
+
+        /* About Section */
+        .about {
+            padding: 60px 20px;
+            background-color: #F1F1F1;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: #34495E;
+        }
+
+        .about p {
+            font-size: 1.3em;
+            color: #555;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #34495E;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 1.1em;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .hero .hero-content h1 {
+                font-size: 2.8em;
+            }
+
+            .hero .hero-content p {
+                font-size: 1.2em;
+            }
+
+            .features .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
 <body>
-    <div class="container">
-        <h1>Welcome to WebApp</h1>
-        <p>Experience the best services with our application. Sign up today and get started!</p>
-        <a href="{% url 'login' %}" class="btn">Login</a>
-        <a href="{% url 'signup' %}" class="btn" style="background-color: #28a745;">Sign Up</a>
-        
-        <!-- Optional Image Section -->
-        <img src="https://source.unsplash.com/400x200/?technology,web" alt="Hero Image" class="hero-img">
-        
-        <!-- Footer -->
-        <footer>
-            &copy; 2024 WebApp. All rights reserved.
-        </footer>
-    </div>
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#">AppName</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="cta">
+                <a href="#signup" class="cta-btn">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to AppName</h1>
+            <p>Revolutionizing the way you work, communicate, and collaborate.</p>
+            <a href="#signup" class="btn-main">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2>Features</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <h3>Fast & Reliable</h3>
+                <p>Our platform ensures that your data and tasks are handled with utmost speed and reliability.</p>
+            </div>
+            <div class="feature-item">
+                <h3>User Friendly</h3>
+                <p>Intuitive and easy-to-use interface for seamless user experience.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Secure</h3>
+                <p>End-to-end encryption to protect your privacy and sensitive information.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>AppName is built to empower individuals and teams to achieve more through smarter, efficient tools. We are passionate about making your work-life easier and more productive.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 AppName. All rights reserved.</p>
+    </footer>
 </body>
+
 </html>
