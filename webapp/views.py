@@ -57,7 +57,7 @@ def signup(request):
                 user = User.objects.create_user(username=username, password=password)
                 user.save()
                 messages.success(request, 'Account created successfully!')
-                return redirect('login')
+                return redirect('/login/')
             except:
                 messages.error(request, 'Username already exists!')
         else:
@@ -72,7 +72,7 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user:
             login(request, user)
-            return redirect('home')
+            return redirect('base')
         else:
             messages.error(request, 'Invalid credentials')
     
@@ -81,3 +81,7 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return redirect('login')
+
+def base_view(request):
+  return render(request, 'webapp/base.html')
+

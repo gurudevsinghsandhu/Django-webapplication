@@ -1,17 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup</title>
 </head>
-<body>
-    <h2>Signup</h2>
-    <form method="post">
-        {% csrf_token %}
-        <label>Username:</label><input type="text" name="username"><br>
-        <label>Password:</label><input type="password" name="password"><br>
-        <label>Confirm Password:</label><input type="password" name="confirm_password"><br>
-        <button type="submit">Signup</button>
-    </form>
-    <a href="{% url 'login' %}">Already have an account? Login</a>
+<body style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; background-color: #f3f4f6;">
+
+    <!-- Signup Container -->
+    <div style="background-color: #ffffff; padding: 40px; border-radius: 15px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); text-align: center; max-width: 400px; width: 100%;">
+        <h2 style="color: #4a4a4a; margin-bottom: 20px;">Create an Account</h2>
+
+        <!-- Signup Form -->
+        <form method="post" style="display: flex; flex-direction: column;">
+            {% csrf_token %}
+            
+            <label style="margin-bottom: 8px; text-align: left;">Username:</label>
+            <input type="text" name="username" required 
+                style="padding: 12px; margin-bottom: 15px; border-radius: 8px; border: 1px solid #ddd;"/>
+
+            <label style="margin-bottom: 8px; text-align: left;">Password:</label>
+            <input type="password" name="password" required 
+                style="padding: 12px; margin-bottom: 15px; border-radius: 8px; border: 1px solid #ddd;"/>
+            
+            <label style="margin-bottom: 8px; text-align: left;">Confirm Password:</label>
+            <input type="password" name="confirm_password" required 
+                style="padding: 12px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #ddd;"/>
+            
+            <button type="submit" style="padding: 12px; background-color: #007bff; color: white; border: none; border-radius: 8px; cursor: pointer;">
+                Signup
+            </button>
+        </form>
+
+        <!-- Login Link -->
+        <p style="margin-top: 20px;">Already have an account? 
+            <a href="{% url 'login' %}" style="color: #007bff; text-decoration: none;">Login</a>
+        </p>
+    </div>
 </body>
 </html>

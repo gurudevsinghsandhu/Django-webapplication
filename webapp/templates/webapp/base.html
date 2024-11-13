@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>base Page</title>
+    </head>
+<body>
+    <div class="container">
+        <h1>Welcome to WebApp</h1>
+        <p>Experience the best services with our application. Sign up today and get started!</p>
+        <a href="{% url 'login' %}" class="btn">Login</a>
+        <a href="{% url 'signup' %}" class="btn" style="background-color: #28a745;">Sign Up</a>
+        
+        <!-- Optional Image Section -->
+        <img src="https://source.unsplash.com/400x200/?technology,web" alt="Hero Image" class="hero-img">
+        
+        <!-- Footer -->
+        <footer>
+            &copy; 2024 WebApp. All rights reserved.
+        </footer>
+    </div>
+</body>
+</html>

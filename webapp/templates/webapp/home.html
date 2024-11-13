@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
     <title>Home Page</title>
@@ -6,5 +6,36 @@
 <body>
     <h1>Welcome, {{ user.username }}!</h1>
     <a href="{% url 'login' %}">Login</a>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; background: linear-gradient(135deg, #ff9a9e, #fad0c4);">
+    
+    <!-- Welcome Container -->
+    <div style="text-align: center; background-color: #ffffff; padding: 40px; border-radius: 20px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); max-width: 400px;">
+        <!-- Logo Section -->
+        <h1 style="font-family: 'Arial', sans-serif; color: #007bff; font-size: 36px; margin-bottom: 10px;">Flipkart Clone</h1>
+        <p style="color: #6c757d; font-size: 18px;">Welcome, {{ user.username }}!</p>
+
+        <!-- Info Section -->
+        <p style="font-size: 16px; margin-top: 15px; color: #333;">Get exclusive offers and updates</p>
+
+        <!-- Login Button -->
+        <a href="{% url 'login' %}" style="display: inline-block; margin-top: 25px; padding: 14px 28px; background-color: #ff5722; color: #ffffff; text-decoration: none; font-weight: bold; border-radius: 10px;">
+            Login
+        </a>
+        
+        <!-- Promotional Banner -->
+        <div style="margin-top: 30px; padding: 10px; background-color: #4caf50; color: white; border-radius: 8px;">
+            <p style="margin: 0;">Free shipping on your first order!</p>
+        </div>
+    </div>
 </body>
 </html>
